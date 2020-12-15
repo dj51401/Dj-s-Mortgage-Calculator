@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dj's Calculator</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <main>
+            <h1>Payment Calculator</h1>
+            
+            <ul id="inputs">
+                <li>Down Payment(%):</li><input type="text" required id="down-payment-input">
+                <li>Loan Amount</li><input type="text" required id="amount-input">
+                <li>Interest Rate(%):</li><input type="text" required id="interest-input">
+                <li>Loan Length(years):</li><input type="text" required id="length-input">
+                <li>Property Tex ($/yr):</li><input type="text" required id="property-tax-input">
+                <li>Home Insurance($/yr):</li><input type="text" required id="home-insurance-input">
+                <button id="calculate" onclick="calculateDebt()" >CALCULATE</button>
+            </ul>
+
+            <div id="outputs">
+                <h2>Mortgage Payment:</h2>
+                <h1 id="mortgage-payment-text">TEST</h1>
+
+                <h2>Total Loan After Interest:</h2>
+                <h1 id="total-loan-text">TEST</h1>
+
+                <h2>Interest Paid:</h2>
+                <h1 id="interest-paid-text">TEST</h1>
+
+                <h1>Total Monthly Payment</h1>
+                <h1 id="total-payment-text"></h1>
+            </div>
+        </main>
+    </body>
+</html>
