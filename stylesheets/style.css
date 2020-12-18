@@ -16,7 +16,7 @@ html, body {
 }
 
 #title {
-  background-color: #b7c9f0;
+  background-color: #eccbbc;
   width: 30%;
   text-align: center;
   margin: 25px auto;
@@ -61,7 +61,7 @@ html, body {
   float: right;
   width: 50%;
   text-align: center;
-  background-color: #b9ddf6;
+  background-color: #b5e9e4;
   box-shadow: 5px 5px 20px 5px grey;
 }
 
@@ -73,7 +73,7 @@ html, body {
 
 #side {
   color: black;
-  background-color: #a9e0da;
+  background-color: #f0e6c2;
   position: relative;
   text-align: center;
   width: 50%;
@@ -87,7 +87,7 @@ html, body {
 }
 
 #payment-breakdown {
-  background-color: #1b263b;
+  background-color: #7DBCEB;
   padding: 25px;
 }
 

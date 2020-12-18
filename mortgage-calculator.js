@@ -1,4 +1,4 @@
-google.charts.load("current", { "packages": ["corechart"] });
+google.charts.load("visualization", 1, { "packages": ["corechart"] });
 google.charts.setOnLoadCallback(drawChart);
 
 var downPayment = 0;
@@ -37,10 +37,10 @@ function calculateDebt() {
     totalLoan = (mortgagePayment + propertyTax + homeInsurance) * 1.1;
     document.getElementById("total-payment-text").innerHTML = "$" + totalLoan.toFixed();
 
-    document.getElementById("payment-text").innerHTML = "$" + (mortgagePayment - (interestPaid / loanLength)).toFixed(2);
-    document.getElementById("property-tax-text").innerHTML = "$" + propertyTax.toFixed(2);
-    document.getElementById("home-insurance-text").innerHTML = "$" + homeInsurance.toFixed(2);
-    document.getElementById("interest-text").innerHTML = "$" + (interestPaid / loanLength).toFixed(2);
+    document.getElementById("payment-text").innerHTML = "$" + (mortgagePayment - (interestPaid / loanLength)).toFixed(2) + "(/month)";
+    document.getElementById("property-tax-text").innerHTML = "$" + propertyTax.toFixed(2) + "(/month)";
+    document.getElementById("home-insurance-text").innerHTML = "$" + homeInsurance.toFixed(2) + "(/month)";
+    document.getElementById("interest-text").innerHTML = "$" + (interestPaid / loanLength).toFixed(2) + "(/month)";
 
     drawChart();
 }
@@ -56,28 +56,34 @@ function drawChart() {
     ]);
 
     var options = {
-        backgroundColor: '#1b263b',
+        backgroundColor: 'transparent',
         title: 'Monthly Breakdown: ',
         titleTextStyle: {
-            color: '#6F9BF7',
+            color: '#3a3b64',
             fontName: 'Segoe UI',
-            fontSize: '24',
+            fontSize: '52',
+        },
+        tooltip: {trigger: 'none'},
+        pieStartAngle: -55,
+        pieSliceBorderColor: 'transparent',
+        pieSliceText: 'percentage',
+        pieSliceTextStyle: {
+            color: 'black',
+            fontSize: '40',
+        },
+        slices: {
+            0: { color: '#888CEB' },
+            1: { color: '#EBAF94', offset: 0.1  },
+            2: { color: '#EBD065', offset: 0.2 },
+            3: { color: '#71EBDE'},
         },
         legend: {
             position: 'top',
-            maxLines: '2',
-            textStyle: {color: 'white'},
-        },
-        tooltip: {trigger: 'none'},
-        pieSliceText: 'label',
-        pieSliceTextStyle: {
-            color: 'black',
-        },
-        slices: {
-            0: { color: '#6BEDDE' },
-            1: { color: '#6FE2F7' },
-            2: { color: '#71B2E0' },
-            3: { color: '#6F9BF7' },
+            textStyle: {
+                color: 'white',
+                fontSize: 32,
+            },
+            maxLines: 2
         },
     };
 
