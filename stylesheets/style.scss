@@ -1,0 +1,93 @@
+html, body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    font-size: 1.25vw;
+}
+.clear-fix{
+    overflow: hidden;
+}
+
+.clear-fix::after{
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+#title{
+    background-color: #b7c9f0;
+    width: 30%;
+    text-align: center;
+    margin: 25px auto;
+    padding: 25px;
+    box-shadow: 5px 5px 20px 5px grey;
+}
+
+#inputs-outputs{
+    padding: 25px;
+}
+
+#inputs{
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    float: left;
+    width: 50%;
+    text-align: center;
+    label{
+        padding: 10px 0px;
+        text-decoration: none;
+        text-align: center;
+    }
+    input{
+        font-size: 1.5vw;
+        position: relative;
+        width: 80%;
+        padding: 1vw;
+    }
+    button{
+        font-size: 2vw;
+        display: block;
+        width: 70%;
+        margin: 10px auto;
+        padding: 1vw;
+    }
+}
+
+#outputs{
+    font-size: 1.5vw;
+    position: relative;
+    float: right;
+    width: 50%;
+    text-align: center;
+    background-color: #b9ddf6;
+    box-shadow: 5px 5px 20px 5px grey;
+}
+
+#chart-wrap {
+    float: left;
+    position: relative;
+    width: 50%;
+}
+
+#side{
+    color: black;
+    background-color: rgb(169, 224, 218);
+    position: relative;
+    text-align: center;
+    width: 50%;
+    float: right;
+    box-shadow: 5px 5px 20px 5px #080b11;
+}
+
+#piechart {
+    position: absolute;
+    display: block;
+}
+
+#payment-breakdown{
+    background-color: #1b263b;
+    padding: 25px;
+}
+
+

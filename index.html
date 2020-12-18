@@ -1,42 +1,63 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Dj's Calculator</title>
-        <link rel="stylesheet" href="style.css">
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript" src="index.js"></script>
-    </head>
-    <body>
-        <h1 id="title">Payment Calculator</h1>
 
-        <main>
-            <div id="data">
-                <ul id="inputs">
-                    <li>Down Payment(%):</li><input type="text" required id="down-payment-input">
-                    <li>Loan Amount</li><input type="text" required id="amount-input">
-                    <li>Interest Rate(%):</li><input type="text" required id="interest-input">
-                    <li>Loan Length(years):</li><input type="text" required id="length-input">
-                    <li>Property Tax ($/yr):</li><input type="text" required id="property-tax-input">
-                    <li>Home Insurance($/yr):</li><input type="text" required id="home-insurance-input">
-                    <button id="calculate" onclick="calculateDebt()" >CALCULATE</button>
-                </ul>
-                <div id="outputs">
-                    
-                    <h1>Total Monthly Payment:</h1>
-                    <h1 id="total-payment-text">TEST</h1>
+<head>
+    <title>Dj's Calculator</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="mortgage-calculator.js"></script>
+</head>
 
-                    <h2>Mortgage Payment:</h2>
-                    <h2 id="mortgage-payment-text">TEST</h2>
+<body>
+    <h1 id="title">Payment Calculator</h1>
 
-                    <h2>Total Loan After Interest:</h2>
-                    <h2 id="total-loan-text">TEST</h2>
+    <main>
 
-                    <h2>Interest Paid:</h2>
-                    <h2 id="interest-paid-text">TEST</h2>
+        <div id="inputs-outputs" class="clear-fix">
+            <ul id="inputs">
+                <label for="down-payment-input">Down Payment(%):</label><br><input type="text" required id="down-payment-input" placeholder="10" value="10"><br>
+                <label for="amount-input">Loan Amount</label><br><input type="text" required id="amount-input" placeholder="250000" value="250000"><br>
+                <label for="interest-input">Interest Rate(%):</label><br><input type="text" required id="interest-input" placeholder="7.8" value="7.8"><br>
+                <label for="length-input">Loan Length(years):</label><br><input type="text" required id="length-input" placeholder="30" value="30"><br>
+                <label for="property-tax-input">Property Tax ($/yr):</label><br><input type="text" required id="property-tax-input" placeholder="1000" value="1000"><br>
+                <label for="home-insurance-input">Home Insurance($/yr):</label><br><input type="text" required id="home-insurance-input" placeholder="1000" value="1000"><br>
+                <button id="calculate" onclick="calculateDebt()">CALCULATE</button>
+            </ul>
 
-                </div>
+            <div id="outputs">
+
+                <h1>Total Monthly Payment:</h1>
+                <h1 id="total-payment-text">TEST</h1>
+
+                <h2>Mortgage Payment:</h2>
+                <h2 id="mortgage-payment-text">TEST</h2>
+
+                <h2>Total Loan After Interest:</h2>
+                <h2 id="total-loan-text">TEST</h2>
+
+                <h2>Interest Paid:</h2>
+                <h2 id="interest-paid-text">TEST</h2>
+
             </div>
-            <div id="piechart" style="width: 100%; height: 40%;"></div>
-        </main>
-    </body>
+        </div>
+        <hr>
+        <div id="payment-breakdown" class="clear-fix">
+            <div id="side">
+                <h1>Payment: <h3 id="payment-text">TEST</h3></h1>
+                <h1>Property Tax: <h3 id="property-tax-text">TEST</h3></h1>
+                <h1>Home Insurance: <h3 id="home-insurance-text">TEST</h3></h1>
+                <h1>Interest: <h3 id="interest-text">TEST</h3></h1>
+            </div>
+
+            <div id="chart-wrap">
+                <div id="pie-chart" style="width: 100%; height: 100%;"></div>
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+
 </html>
