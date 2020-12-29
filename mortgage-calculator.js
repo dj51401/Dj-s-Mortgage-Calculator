@@ -47,6 +47,17 @@ function calculateDebt() {
 
 function drawChart() {
 
+    var width = $('#pie-chart').width();
+    var fontSize = (width / 100).toFixed(1);
+    console.log(fontSize);
+
+    var cw = $('#chart-wrap').width();
+    $('#chart-wrap').css({'height' : cw + 'px'});
+
+    var sw = $('#side').width();
+    $('#side').css({'height' : sw + 'px'});
+
+
     var data = google.visualization.arrayToDataTable([
         ["Bill", "Price"],
         ["Mortgage Payment", mortgagePayment - (interestPaid / loanLength)],
@@ -61,7 +72,7 @@ function drawChart() {
         titleTextStyle: {
             color: '#3a3b64',
             fontName: 'Segoe UI',
-            fontSize: '52',
+            fontSize: fontSize  * 5,
         },
         tooltip: {trigger: 'none'},
         pieStartAngle: -55,
@@ -69,7 +80,7 @@ function drawChart() {
         pieSliceText: 'percentage',
         pieSliceTextStyle: {
             color: 'black',
-            fontSize: '40',
+            fontSize: fontSize  * 3,
         },
         slices: {
             0: { color: '#888CEB' },
@@ -77,21 +88,16 @@ function drawChart() {
             2: { color: '#EBD065', offset: 0.2 },
             3: { color: '#71EBDE'},
         },
+        width: width,
         legend: {
             position: 'top',
             textStyle: {
                 color: 'white',
-                fontSize: 32,
+                fontSize: fontSize * 3,
             },
             maxLines: 2
         },
     };
-
-    var cw = $('#chart-wrap').width();
-    $('#chart-wrap').css({'height' : cw + 'px'});
-
-    var sw = $('#side').width();
-    $('#side').css({'height' : sw + 'px'});
 
 
     var chart = new google.visualization.PieChart(document.getElementById("pie-chart"));
