@@ -17,6 +17,13 @@ $(window).resize(function(){
     drawChart();
 });
 
+$(document).ready(() => {
+    $(document).on('submit', '#inputs', () => {
+        calculateDebt();
+        return false;
+    })
+})
+
 function calculateDebt() {
     downPayment = -(document.getElementById("down-payment-input").value / 100) + 1;
     loanAmount = document.getElementById("amount-input").value * downPayment;
